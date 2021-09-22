@@ -1,2 +1,2 @@
 #!/bin/bash
-$ dirname
+$ echo pwd
