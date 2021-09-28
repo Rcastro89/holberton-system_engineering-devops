@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -RlaS | find -type f -name "*.gif" | cut -d"/" -f 3 | rev | cut -d"." -f 2,3 | rev
