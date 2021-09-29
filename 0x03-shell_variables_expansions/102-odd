@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "prueba"
+nl | cut -c6-100 | grep '^[13579]' | cut -c3-100
