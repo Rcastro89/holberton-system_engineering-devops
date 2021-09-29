@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(( BREATH * BREATH * BREATH))
+echo "==> $BREATH^$LOVE"
