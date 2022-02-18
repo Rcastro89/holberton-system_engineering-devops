@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script print all proccess
+ps -e u f
