@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+n=1
+while [ $n -le 100 ]
+do
+	mul3=$(($n%3))
+	mul5=$(($n%5))
+	mul15=$(($n%15))
+	if [ $mul3 -eq 0 ]
+	then
+		if [ $mul15 -eq 0 ]
+		then
+			echo "FizzBuzz"
+		else
+			echo "Fizz"
+		fi
+	elif [ $mul5 -eq 0 ]
+	then
+		echo "Buzz"
+	else
+		echo $n
+	fi
+	((n++))
+done
