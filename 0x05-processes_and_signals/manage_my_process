@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# my file
+if [ $1 == "start" ]
+then
+	echo $$ > /var/run/my_process.pid
+elif [ $1 == "stop" ]
+then
+	sudo rm /var/run/my_process.pid
+	sudo pkill -f manage_my_process
+else
+	echo $$ > /var/run/my_process.pid
+fi
+for ((i=1; i<=10;))
+do
+	echo "I am alive!" >> /tmp/my_process
+	sleep 2
+done

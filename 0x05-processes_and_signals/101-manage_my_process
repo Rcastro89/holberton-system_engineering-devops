@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# my file
+if [ $# -ne 1 ]
+then
+	echo "Usage: manage_my_process {start|stop|restart}"
+elif [[ $1 != "start" && $1 != "stop" && $1 != "restart" ]]
+then
+	echo "Usage: manage_my_process {start|stop|restart}"
+else
+	if [ $1 == "start" ]
+	then
+		echo "manage_my_process started"
+	elif [ $1 == "stop" ]
+	then
+		echo "manage_my_process stopped"
+	else
+		sudo rm /var/run/my_process.pid
+		sudo pkill -f manage_my_process &
+		echo "manage_my_process restarted"
+	fi
+	setsid ./manage_my_process "$1" & 
+fi
