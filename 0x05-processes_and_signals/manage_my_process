@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # my file
-if [ $1 == "start" ]
+if [ "$1" == "start" ]
 then
 	echo $$ > /var/run/my_process.pid
-elif [ $1 == "stop" ]
+elif [ "$1" == "stop" ]
 then
 	sudo rm /var/run/my_process.pid
 	sudo pkill -f manage_my_process
