@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script print loop infinity
+pro="$(pgrep "./7-highlander" -f)"
+for i in $pro;
+do
+	kill -9 "$i"
+done
