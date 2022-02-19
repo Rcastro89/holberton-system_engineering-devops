@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# my file
+echo $$ > /var/run/myscript.pid
+for ((i=1; i<=10;))
+do
+	echo "To infinity and beyond"
+	sleep 2
+	trap 'echo "I hate the kill command"' SIGTERM
+	trap 'echo "Y U no love me?!"' SIGINT
+	trap 'rm /var/run/myscript.pid' SIGQUIT
+	trap 'break' SIGQUIT
+done
