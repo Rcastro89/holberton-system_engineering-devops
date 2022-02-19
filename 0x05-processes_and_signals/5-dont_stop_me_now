@@ -4,5 +4,5 @@ list=$(ps aux | grep "./4-to_infinity_and_beyond" | awk '{print $2}')
 for i in $list; 
 do
 	echo $i
-	kill -9 $i
+	kill $i
 done
