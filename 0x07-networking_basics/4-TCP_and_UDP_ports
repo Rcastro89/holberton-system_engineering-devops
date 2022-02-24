@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script print tcp and udp ports
+sudo netstat -pnltu
