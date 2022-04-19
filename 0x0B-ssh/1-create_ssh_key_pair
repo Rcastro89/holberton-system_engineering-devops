@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Name scholl and betty
+ssh-keygen -b 4096 -t rsa -f "school" -N "betty"
