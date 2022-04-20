@@ -1,10 +1,10 @@
 # first puppet create file
 
-file {'create_files':
-	ensure => 'file',
-	path => '/tmp/school',
-	mode => '0744',
-	owner => 'www-data',
-	group => 'www-data',
-	content => 'I love Puppet'
+file { 'create_files':
+  ensure  => 'file',
+  path    => '/tmp/school',
+  mode    => '0744',
+  owner   => 'www-data',
+  group   => 'www-data',
+  content => 'I love Puppet'
 }
