@@ -1,9 +1,12 @@
-# first puppet create file
+# update ssh config.
+include stdlib
 
-file { 'ssh_config':
-  ensure  => 'file',
-  path    => '/etc/.ssh',
-  content => 'HOTS *
-	IdentityFile ~/.ssh/school
-    PasswordAuthentication no'
+file_line { 'first line':
+  path =>  '/etc/ssh/ssh_config',
+  line =>  'PasswordAuthentication no',
+}
+
+file_line {  'second line':
+  path =>  '/etc/ssh/ssh_config',
+  line =>  'IdentityFile ~/.ssh/school',
 }
