@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Agregamos una linea sed para agregar una pagina de error personalizada.
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo chown -R ubuntu /var/www
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+sed -i '/listen 80 default_server/ a\ \trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sed -i "/listen 80 default_server/ a\  \terror_page 404 /custom_404.html;" /etc/nginx/sites-available/default
+sudo service nginx restart
