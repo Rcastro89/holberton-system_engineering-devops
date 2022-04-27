@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Modificamos el puerto 8080 a 80.
+
+sed -i 's/8080/80/;' /etc/nginx/sites-enabled/default
+
+service nginx restart
