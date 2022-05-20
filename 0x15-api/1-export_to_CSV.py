@@ -18,9 +18,10 @@ if __name__ == "__main__":
     tasks = []
     with open('{}.csv'.format(ID), 'w', newline='') as archivo:
         cabeceras = ['userId', 'name', 'completed', 'title']
-        escribir = csv.DictWriter(archivo, fieldnames=cabeceras, quoting=csv.QUOTE_ALL)
+        escribir = csv.DictWriter(
+            archivo, fieldnames=cabeceras, quoting=csv.QUOTE_ALL)
         for task in todo:
-            escribir.writerow({'userId': task.get('userId'),
-                                'name': user.get('name'),
-                                'completed': task.get('completed'),
-                                'title': task.get('title')})
+            escribir.writerow({'userId': str(task.get('userId')),
+                               'name': user.get('name'),
+                               'completed': task.get('completed'),
+                               'title': task.get('title')})
