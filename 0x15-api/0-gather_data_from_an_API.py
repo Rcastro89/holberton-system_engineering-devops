@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""get api data"""
+"""get api data python3"""
 
-import urllib.request
 import json
 import sys
+import urllib.request
 
 req = urllib.request.Request('https://jsonplaceholder.typicode.com/todos/')
 with urllib.request.urlopen(req) as response:
