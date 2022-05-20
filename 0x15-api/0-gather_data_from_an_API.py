@@ -23,4 +23,5 @@ if __name__ == "__main__":
     print("Employee {} is done with tasks({}/{}):"
           .format(nombre, completed, total))
     print("\n".join(["\t " + tareas.get('title') for tareas in todos
-                     if tareas.get('userId') == int(did) and tareas.get('completed')]))
+                     if tareas.get('userId') == int(did)
+                     and tareas.get('completed')]))
