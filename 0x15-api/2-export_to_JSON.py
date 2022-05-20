@@ -15,10 +15,8 @@ if __name__ == "__main__":
     tareas = {argv[1]: []}
     lista_dic = []
     with open('{}.json'.format(ID), 'w') as archivo:
-        for task in todo:
-            elementos = {"task": task.get('title'),
-                         "complete": task.get('completed'),
-                         "username": user.get('username')}
-            lista_dic.append(elementos)
-        tareas[argv[1]] = lista_dic
-        json.dump(tareas, archivo)
+         json.dump({argv[1]: [{
+                "task": i.get("title"),
+                "completed": i.get("completed"),
+                "username": user.get('username')
+                } for i in todo]}, archivo)
