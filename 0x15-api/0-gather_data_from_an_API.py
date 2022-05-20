@@ -31,6 +31,6 @@ if __name__ == "__main__":
                 completadas += 1
                 titulos.append(tareas[x]['title'])
     print("Employee {} is done with tasks({}/{}):".format
-        (nombre, completadas, total))
+          (nombre, completadas, total))
     for v in titulos:
         print("\t {}".format(v))
