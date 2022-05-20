@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""get api data python3"""
+"""
+get api data python3 cualquier cosa
+"""
 
 import json
 import sys
