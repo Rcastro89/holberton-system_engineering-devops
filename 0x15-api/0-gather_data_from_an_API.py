@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""accessing a url with employee ID to return information."""
+"""accessing a url with employee ID to return information permision"""
 
 if __name__ == "__main__":
     import requests
