@@ -3,11 +3,10 @@
 get api data python3 cualquier cosa
 """
 
-import json
-import sys
-import requests
-
 if __name__ == "__main__":
+    import json
+    import sys
+    import requests
 
     argv = sys.argv[1]
     name = (
