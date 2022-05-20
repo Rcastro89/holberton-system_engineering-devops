@@ -1,34 +1,26 @@
 #!/usr/bin/python3
-"""
-get api data python3 cualquier cosa
-"""
+"""Escriba un script de Python que, utilizando esta API REST,
+para una ID de empleado determinada, devuelva información
+sobre el progreso de su lista TODO."""
+
+import requests
+import sys
 
 if __name__ == "__main__":
-    import json
-    import sys
-    import requests
 
-    argv = sys.argv[1]
-    name = (
-        requests.get("https://jsonplaceholder.typicode.com/users/{}"
-                     .format(argv))
-        .json()
-        .get("name")
-    )
-
-    taskEmploy = requests.get(
-        "https://jsonplaceholder.typicode.com/todos"
-    ).json()
-    tasksDone = 0
-    tasksTotal = 0
-    nameTaskDone = []
-    for task in taskEmploy:
-        if task.get("completed") and task.get('userId') == int(argv):
-            tasksDone += 1
-            nameTaskDone.append(task.get("title"))
-        if task.get('userId') == int(argv):
-            tasksTotal += 1
+    did = sys.argv[1]
+    url = requests.get("https://jsonplaceholder.typicode.com/users/{}"
+                       .format(did))
+    nombre = url.json().get('name')
+    todos = requests.get("https://jsonplaceholder.typicode.com/todos").json()
+    total = 0
+    completed = 0
+    for tareas in todos:
+        if tareas.get('userId') == int(did):
+            total += 1
+            if tareas.get('completed'):
+                completed += 1
     print("Employee {} is done with tasks({}/{}):"
-          .format(name, tasksDone, tasksTotal))
-    print("\t ", end="")
-    print("\n\t ".join(nameTaskDone))
+          .format(nombre, completed, total))
+    print("\n".join(["\t " + tareas.get('title') for tareas in todos
+                     if tareas.get('userId') == int(did) and tareas.get('completed')]))
