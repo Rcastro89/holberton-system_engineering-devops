@@ -22,6 +22,6 @@ if __name__ == "__main__":
             archivo, fieldnames=cabeceras, quoting=csv.QUOTE_ALL)
         for task in todo:
             escribir.writerow({'userId': str(task.get('userId')),
-                               'name': user.get('name'),
+                               'name': str(user.get('username')),
                                'completed': task.get('completed'),
                                'title': task.get('title')})
